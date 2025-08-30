@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    float num, raiz;
+    int i;
+
+    printf("Ingresa un numero: ");
+    scanf("%f", &num);
+
+    if (num < 0) {
+        printf("No se puede calcular la raiz cuadrada de un numero negativo.\n");
+    } else {
+        raiz = num / 2; // valor inicial
+        for (i = 0; i < 20; i++) { // iteraciones para mejorar la aproximacion
+            raiz = 0.5 * (raiz + num / raiz);
+        }
+        printf("La raiz cuadrada aproximada de %.3f es: %.6f\n", num, raiz);
+    }
+
+    return 0;
+}
